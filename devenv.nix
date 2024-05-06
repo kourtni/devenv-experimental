@@ -2,7 +2,7 @@
 
 {
   # https://devenv.sh/basics/
-  env.GREET = "devenv";
+  env.GREET = "the devenv experimental repo";
 
   # https://devenv.sh/packages/
   packages = [ pkgs.git ];

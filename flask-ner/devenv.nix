@@ -10,7 +10,7 @@
   ];
 
   # https://devenv.sh/scripts/
-  scripts.hello.exec = "echo hello from $GREET";
+  scripts.hello.exec = "echo *** Hello from $GREET! ***";
 
   enterShell = ''
     hello
@@ -18,8 +18,10 @@
 
   # https://devenv.sh/tests/
   enterTest = ''
-    echo "Running tests"
-    git --version | grep "2.42.0"
+    echo "*** Installing Named Entity Finder as package ***"
+    pip install -e .
+    echo "*** Running Python tests ***"
+    python -m pytest
   '';
 
   # https://devenv.sh/services/
@@ -31,6 +33,7 @@
     venv.enable = true;
     venv.requirements = ''
       flask
+      parameterized
       pytest
       selenium
       spacy
