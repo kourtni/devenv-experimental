@@ -1,6 +1,4 @@
-from typing import Any
-from typing import Dict
-from typing import List
+from typing import Any, Dict, List
 
 
 class NerModelTestDouble:
@@ -20,7 +18,9 @@ class DocTestDouble:
     '''Test double for spaCy Doc.'''
 
     def __init__(self, sentence: str, entities: Dict):
-        self.entities = [SpanTestDouble(ent["text"], ent["label_"]) for ent in entities]
+        self.entities = [
+            SpanTestDouble(ent['text'], ent['label_']) for ent in entities
+        ]
 
 
 class SpanTestDouble:

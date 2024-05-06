@@ -5,7 +5,10 @@
   env.GREET = "the devenv experimental repo";
 
   # https://devenv.sh/packages/
-  packages = [ pkgs.git ];
+  packages = [
+    pkgs.pre-commit
+    pkgs.yapf
+  ];
 
   # https://devenv.sh/scripts/
   scripts.hello.exec = "echo hello from $GREET";
@@ -17,8 +20,7 @@
 
   # https://devenv.sh/tests/
   enterTest = ''
-    echo "Running tests"
-    git --version | grep "2.42.0"
+    echo "No tests to run!"
   '';
 
   # https://devenv.sh/services/
